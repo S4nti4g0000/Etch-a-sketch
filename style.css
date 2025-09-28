@@ -1,0 +1,14 @@
+body {
+    background: gray;
+}
+
+#main-grid {  
+    display: flex;
+    flex-wrap: wrap;
+    justify-self: center;
+    align-content: center;
+}
+
+.grid-h {    
+    background-color: white;
+}
