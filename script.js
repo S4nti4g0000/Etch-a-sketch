@@ -1,9 +1,8 @@
 const gridGen = document.getElementById("main-grid")
 let gridSize = 16
-let cellSize = 30
-const fullSize = gridSize * cellSize
+let cellSize = 480/gridSize
 
-gridGen.style.width = `${fullSize}px`
+gridGen.style.width = `480px`
 
 for(i = 0; i < gridSize; i++){
     for(j = 0; j < gridSize; j++){
