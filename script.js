@@ -1,4 +1,5 @@
 const gridGen = document.getElementById("main-grid")
+const buttonSelector = document.getElementById("buttons").querySelectorAll("button")
 let gridSize = 16
 let cellSize = 480/gridSize
 
@@ -18,4 +19,12 @@ for(i = 0; i < gridSize; i++){
         gridGen.appendChild(divG)
     }
 }
+
+
+buttonSelector.forEach((button) => {
+    button.addEventListener("click", (ev) =>{
+        let tar = ev.target
+        console.log(tar)
+    })
+})
 

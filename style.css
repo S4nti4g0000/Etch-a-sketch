@@ -1,15 +1,33 @@
 body {
-    background: gray;
+    background: gray;    
 }
 
 #main-grid {  
     display: flex;
     flex-wrap: wrap;
-    justify-self: center;
-    align-content: center;
+    align-items: center;
+    justify-self: center;    
 }
+
+#buttons {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 40px;
+}
+
+#buttons button {
+    background-color: darkgray;
+    border-style: solid;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+}
+
 
 .grid-h {    
     background-color: white;
     transition: background-color 0.3s;
+    align-self: center;
 }
