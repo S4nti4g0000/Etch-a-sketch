@@ -77,7 +77,8 @@ const clearGrid = ()=> {
 
 const changeSize = ()=>{
     let newSize = prompt(`Enter a new grid size. Current size is ${gridSize}x${gridSize}.\nMax grid size: 64x64`)
-
+    divColor = `rgb(0,0,0,0)`
+    vary = 0
     if (newSize <= 64 && newSize >= 1){
         const selector = gridGen.querySelectorAll("div")
         selector.forEach((d) => {gridGen.removeChild(d)})
