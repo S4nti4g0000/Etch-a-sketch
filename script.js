@@ -1,8 +1,10 @@
 const gridGen = document.getElementById("main-grid")
 const buttonSelector = document.getElementById("buttons").querySelectorAll("button")
 const info = document.getElementById("info-grid")
+let vary = 0
+let check = false
 let gridSize = 16
-let divColor = "rgb(0,0,0)"
+let divColor = "rgba(0, 0, 0, 0.19)"
 
 
 gridGen.style.width = "480px"
@@ -21,6 +23,16 @@ const generateGrid = () => {
 
             divG.addEventListener("mouseenter", () => {
                 divG.style.background = divColor
+
+                divColor = `rgb(0,0,0,${vary+=0.09})`
+                if(vary >= 1) vary = 1
+
+                if(check === true){
+                    divG.style.background = 
+                    `rgb(${Math.floor(Math.random() * 255)},
+                    ${Math.floor(Math.random() * 255)},
+                    ${Math.floor(Math.random() * 255)})`
+                }
             })
 
             gridGen.appendChild(divG)
@@ -31,8 +43,6 @@ const generateGrid = () => {
 }
 
 generateGrid()
-
-
 
 buttonSelector.forEach((button) => {
     button.addEventListener("click", (ev) =>{
@@ -45,6 +55,12 @@ buttonSelector.forEach((button) => {
             case 'bt-change':
                 changeSize()
                 break;
+            case 'randomize-color':
+                check = !check
+                console.log(check)
+                divColor = "rgb(0,0,0,0)"
+                vary = 0
+                break;
         }
     })
 })
@@ -52,6 +68,8 @@ buttonSelector.forEach((button) => {
 
 const clearGrid = ()=> {
     const selector = gridGen.querySelectorAll("div")
+    divColor = `rgb(0,0,0,0)`
+    vary = 0
     selector.forEach((d) => {
         d.style.background = "white"
     })
@@ -70,4 +88,3 @@ const changeSize = ()=>{
     else if(typeof(newSize) === 'string') alert('Words can\'t be accepted, Try again. \nPlease enter a new value between 1 and 64')
     else if(newSize === null) alert('No value entered. \nKeeping current settings.')
 }
-
