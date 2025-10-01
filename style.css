@@ -2,6 +2,20 @@ body {
     background: rgb(178, 178, 178);    
 }
 
+#container{
+    padding: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+}
+
+#mTitle {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
 #main-grid {  
     display: flex;
     flex-wrap: wrap;
